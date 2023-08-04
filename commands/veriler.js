@@ -14,7 +14,7 @@ module.exports = {
 
         if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) return interaction.reply({ embeds: [noperm], ephemeral: true })
 
-        const toplam = db.get(`toplam_${interaction.guild.id}`) || "249";
+        const toplam = db.get(`toplam_${interaction.guild.id}`) || "0";
 
         const toplam_embed = new EmbedBuilder()
             .setColor("Red")
@@ -23,9 +23,9 @@ module.exports = {
         if (!toplam || toplam === "0") return interaction.reply({ embeds: [toplam_embed], ephemeral: true })
 
         const s1 = db.get(`s1_${interaction.guild.id}`) || "0";
-        const s2 = db.get(`s2_${interaction.guild.id}`) || "10";
-        const s3 = db.get(`s3_${interaction.guild.id}`) || "214";
-        const s4 = db.get(`s4_${interaction.guild.id}`) || "24";
+        const s2 = db.get(`s2_${interaction.guild.id}`) || "0";
+        const s3 = db.get(`s3_${interaction.guild.id}`) || "0";
+        const s4 = db.get(`s4_${interaction.guild.id}`) || "0";
 
         let veriler = [
             { label: `Youtube Videosu (${s1}/${toplam} kişi)`, value: s1 },
